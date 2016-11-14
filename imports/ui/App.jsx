@@ -81,13 +81,16 @@ class App extends Component {
     );
   }
 }
-
+// ATRIBUI ATRIBUTO COM LISTA(OBJETO)
+// DE TIPAGEM DOS PROPS QUE O COMPONENTE
+// DEVE RECEBER
 App.propTypes = {
   tasks: PropTypes.array.isRequired,
   incompleteCount: PropTypes.number.isRequired,
   currentUser: PropTypes.object,
 };
-
+// CRIA UM SANDBOX QUE PASSA OS VALORES SETADOS
+// PARA O COMPONENT(NO CASO APP)
 export default createContainer(() => {
   return {
     tasks: Tasks.find({}, { createdAt: -1 }).fetch(),
